@@ -3,10 +3,10 @@ services:
     web:
         #Use following image to download from Docker Hub
         #image: chrch/docker-pets:latest
-        image: chrch/docker-pets:1.0
+        image: chrch/docker-pets:2.0
         deploy:
             mode: replicated
-            replicas: 2
+            replicas: 3
         healthcheck:
             interval: 10s
             timeout: 5s
@@ -19,8 +19,6 @@ services:
             THREADED: 'True'
         networks:
             - backend
-        volumes:
-            - ./web:/app
 
     db:
         image: consul:0.7.2
